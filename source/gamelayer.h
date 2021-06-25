@@ -33,6 +33,7 @@ private:
 
 	meteor::Ref<meteor::Texture2D>	m_BlocksUITexture;
 	meteor::Ref<meteor::Texture2D>  m_CrosshairTexture;
+	meteor::Ref<meteor::Texture2D>  m_SlotBackgroundTexture;
 
 	meteor::Ref<ToolBar>			m_ToolBar;
 	meteor::Ref<Inventory>			m_Inventory;

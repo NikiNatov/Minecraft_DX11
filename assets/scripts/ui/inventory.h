@@ -8,7 +8,7 @@ using namespace meteor;
 class Inventory
 {
 public:
-    Inventory(Ref<Texture2D> blockIconSpriteSheet);
+    Inventory(Ref<Texture2D> blockIconSpriteSheet, Ref<Texture2D> slotBackgroundTexture);
 
     void                     OnImGuiRender();
                              

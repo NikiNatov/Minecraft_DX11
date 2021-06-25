@@ -34,6 +34,7 @@ void GameLayer::OnAttach()
 
 	m_CrosshairTexture = GfxContext::GetDevice()->CreateTexture2D("assets/textures/crosshair.png", spec);
 	m_BlocksUITexture = GfxContext::GetDevice()->CreateTexture2D("assets/textures/blockiconsinventory.png", spec);
+	m_SlotBackgroundTexture = GfxContext::GetDevice()->CreateTexture2D("assets/textures/itembox.png", spec);
 
 	// Create scene
 	m_Scene = CreateRef<Scene>();
@@ -55,8 +56,10 @@ void GameLayer::OnAttach()
 	world.AddComponent<ScriptComponent>().Bind<World>();
 
 	// Create UI elements
-	m_ToolBar = CreateRef<ToolBar>(m_BlocksUITexture);
-	m_Inventory = CreateRef<Inventory>(m_BlocksUITexture);
+	m_ToolBar = CreateRef<ToolBar>(m_BlocksUITexture, m_SlotBackgroundTexture);
+	m_ToolBar->SetActiveItemSlot(0);
+
+	m_Inventory = CreateRef<Inventory>(m_BlocksUITexture, m_SlotBackgroundTexture);
 	m_PauseMenu = CreateRef<PauseMenu>();
 	m_StatsWindow = CreateRef<StatsWindow>(1, 4, player);
 	m_CrossHairWindow = CreateRef<CrosshairWindow>(m_CrosshairTexture);

@@ -1,7 +1,7 @@
 #include "inventory.h"
 
 // --------------------------------------------------------------------------------------------------------------------------------------
-Inventory::Inventory(Ref<Texture2D> blockIconSpriteSheet)
+Inventory::Inventory(Ref<Texture2D> blockIconSpriteSheet, Ref<Texture2D> slotBackgroundTexture)
 	: m_BlockIconsSpritesheet(blockIconSpriteSheet)
 {
 	// Initialize slots
@@ -10,7 +10,7 @@ Inventory::Inventory(Ref<Texture2D> blockIconSpriteSheet)
 		mtrInt x = i % 16;
 		mtrInt y = i / 16;
 
-		m_Slots[y][x] = ItemSlot((BlockType)i, m_BlockIconsSpritesheet);
+		m_Slots[y][x] = ItemSlot((BlockType)i, m_BlockIconsSpritesheet, slotBackgroundTexture);
 	}
 }
 

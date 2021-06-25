@@ -49,7 +49,7 @@ class ItemSlot
 {
 public:
     ItemSlot();
-    ItemSlot(BlockType blockID, Ref<Texture2D> blockIconsSpritesheet);
+    ItemSlot(BlockType blockID, Ref<Texture2D> blockIconsSpritesheet, Ref<Texture2D> backgroundTexture);
 
     void                    SetActive(mtrBool active);
     void                    OnImGuiRender();
@@ -58,7 +58,7 @@ public:
     inline mtrBool          IsActive() { return m_Active; }
 private:
     Item                    m_ItemData;
-    Ref<Texture2D>          m_BorderImage;
     mtrBool                 m_Active;
+    Ref<Texture2D>          m_BackgroundTexture;
     Ref<Texture2D>          m_BlockIconsSpritesheet;
 };

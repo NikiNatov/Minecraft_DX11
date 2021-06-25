@@ -10,7 +10,7 @@ using namespace meteor;
 class ToolBar
 {
 public:
-    ToolBar(Ref<Texture2D> blockIconsSpriteSheet);
+    ToolBar(Ref<Texture2D> blockIconsSpriteSheet, Ref<Texture2D> slotBackgroundTexture);
 
     void                    SetActiveItemSlot(mtrU32 index);
     void                    OnImGuiRender();
